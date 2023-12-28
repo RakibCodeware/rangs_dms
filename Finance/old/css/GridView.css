@@ -1,0 +1,33 @@
+﻿/* DEFAULTS
+----------------------------------------------------------*/
+
+.ddl
+        {
+            border:2px solid #7d6754;
+            border-radius:5px;
+            padding:3px;
+            -webkit-appearance: none; 
+            background-image:url('Images/Arrowhead-Down-01.png');
+            background-position:165px;
+            background-repeat:no-repeat;
+            text-indent: 0.01px;/*In Firefox*/
+            text-overflow: '';/*In Firefox*/
+        }
+
+
+.grid th{border:1px solid #bbb; padding:4px; background-color:#345; color:#fff; text-align:left;}
+.grid td{border:1px solid #bbb; padding:4px;}
+.gvAlt{background-color:#f3f3f3;}
+.gvEmpty td{padding: 20px; color: red; font-size:17px; background-color:#F5F5F5; }
+
+.popuHeader{padding:7px; background-color:#000000; color:#ffffff; font-size:100%; font-weight:bold;}
+div{margin-bottom:7px;}
+
+.table-border{width:100%;}
+.table-border td{border:1px dashed #dddddd; padding:4px;}
+
+
+input[type=text]{
+}
+
+utton], input[type=submit]{background-color:#793; padding:4px 7px; border:none; color:#fff; font-size:17px;}

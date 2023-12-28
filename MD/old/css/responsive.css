@@ -1,0 +1,95 @@
+/* Tweeg - Responsive Styles */
+
+@media (max-height: 800px) {
+	#site-logo {
+		margin-bottom: 24px;
+	}
+	#tweet-feed .twit-header {
+		margin-bottom: 20px;
+	}
+	.part-content {
+		bottom: 30px;
+	}
+}
+
+@media (max-width: 1136px) {
+	#content-tabs ul li a {
+		padding: 14px 12px 12px;
+	}
+	#countdown .countdown-section {
+		margin: 0 16px;
+	}
+	#countdown .countdown-amount {
+		font-size: 60px;
+		line-height: 72px;
+	}
+	#countdown .sep {
+		font-size: 60px;
+		line-height: 72px;
+		right: -25px;
+	}
+	#countdown .countdown-section.secs {
+		min-width: 60px;
+	}
+}
+@media (max-width: 1024px) {
+	body {
+		height: auto;
+	}
+	.tweet-feed-title {
+		font-size: 30px;
+		line-height: 36px;
+	}
+	#tweet-feed .inside {
+		padding: 20px 30px 30px;
+	}
+	#tweet-feed .tweet-text {
+		font-size: 20px;
+		line-height: 24px;
+	}
+}
+@media (max-width: 768px) {
+	#countdown-block {
+		padding-top: 30px;
+		position: relative;
+		margin-top: 0 !important;
+		margin-bottom: 50px;
+		top: 0;
+		right: 0;
+	}
+	#tweet-feed {
+		position: relative;
+		left: auto;
+		right: auto;
+		margin: 0 0 50px 0;
+		padding-right: 0;
+		width: 100%;
+		max-width: 100%;
+	}
+	#timeline {
+		right: auto;
+		left: auto;
+		position: relative;
+	}
+	#timeline .slides {
+		overflow: hidden;
+		position: relative;
+	}
+	#timeline .slides li {
+		margin-top: 0 !important;
+		position: relative !important;
+	}
+	#feed-label {
+		position: relative;
+		right: auto;
+	}
+	#tweet-feed .inside {
+		height: auto;
+	}
+	#site-footer {
+		left: 0;
+		right: 0;
+		position: relative;
+		padding-bottom: 20px;
+	}
+}

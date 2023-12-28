@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsLogReport1" targetNamespace="http://tempuri.org/dsLogReport1.xsd" xmlns:mstns="http://tempuri.org/dsLogReport1.xsd" xmlns="http://tempuri.org/dsLogReport1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsLogReport1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="dsLogReport1" msprop:Generator_UserDSName="dsLogReport1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SName" msprop:Generator_ColumnVarNameInTable="columnSName" msprop:Generator_ColumnPropNameInRow="SName" msprop:Generator_ColumnPropNameInTable="SNameColumn" msprop:Generator_UserColumnName="SName" type="xs:string" minOccurs="0" />
+              <xs:element name="PSName" msprop:Generator_ColumnVarNameInTable="columnPSName" msprop:Generator_ColumnPropNameInRow="PSName" msprop:Generator_ColumnPropNameInTable="PSNameColumn" msprop:Generator_UserColumnName="PSName" type="xs:string" minOccurs="0" />
+              <xs:element name="PPSName" msprop:Generator_ColumnVarNameInTable="columnPPSName" msprop:Generator_ColumnPropNameInRow="PPSName" msprop:Generator_ColumnPropNameInTable="PPSNameColumn" msprop:Generator_UserColumnName="PPSName" type="xs:string" minOccurs="0" />
+              <xs:element name="LogInTime" msprop:Generator_ColumnVarNameInTable="columnLogInTime" msprop:Generator_ColumnPropNameInRow="LogInTime" msprop:Generator_ColumnPropNameInTable="LogInTimeColumn" msprop:Generator_UserColumnName="LogInTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LogOutTime" msprop:Generator_ColumnVarNameInTable="columnLogOutTime" msprop:Generator_ColumnPropNameInRow="LogOutTime" msprop:Generator_ColumnPropNameInTable="LogOutTimeColumn" msprop:Generator_UserColumnName="LogOutTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName" type="xs:string" minOccurs="0" />
+              <xs:element name="PCName" msprop:Generator_ColumnVarNameInTable="columnPCName" msprop:Generator_ColumnPropNameInRow="PCName" msprop:Generator_ColumnPropNameInTable="PCNameColumn" msprop:Generator_UserColumnName="PCName" type="xs:string" minOccurs="0" />
+              <xs:element name="LogIn" msprop:Generator_ColumnVarNameInTable="columnLogIn" msprop:Generator_ColumnPropNameInRow="LogIn" msprop:Generator_ColumnPropNameInTable="LogInColumn" msprop:Generator_UserColumnName="LogIn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LogOut" msprop:Generator_ColumnVarNameInTable="columnLogOut" msprop:Generator_ColumnPropNameInRow="LogOut" msprop:Generator_ColumnPropNameInTable="LogOutColumn" msprop:Generator_UserColumnName="LogOut" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

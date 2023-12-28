@@ -1,0 +1,190 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin_Report.master.cs" Inherits="Admin_Report" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head id="Head1" runat="server">
+    <title>Database Management System</title>
+    <script language="javascript" type="text/javascript">
+        function divexpandcollapse(divname) {
+            var div = document.getElementById(divname);
+            var img = document.getElementById('img' + divname);
+            if (div.style.display == "none") {
+                div.style.display = "inline";
+                img.src = "../Images/minus.gif";
+            } else {
+                div.style.display = "none";
+                img.src = "../Images/plus.gif";
+            }
+        }
+
+        function divexpandcollapseChild(divname) {
+            var div1 = document.getElementById(divname);
+            var img = document.getElementById('img' + divname);
+            if (div1.style.display == "none") {
+                div1.style.display = "inline";
+                img.src = "../Images/minus.gif";
+            } else {
+                div1.style.display = "none";
+                img.src = "../Images/plus.gif"; ;
+            }
+        }
+    </script>
+
+   
+    <script language="javascript" type="text/javascript">
+
+        function confirm_delete() {
+            if (confirm("Are you sure you want to delete this record ?") == true)
+                return true;
+            else
+                return false;
+        }
+
+        function confirm_Save() {
+            if (confirm("Are you sure you want to save this data ?") == true)
+                return true;
+            else
+                return false;
+        }
+
+        function confirm_ChangePW() {
+            if (confirm("Do you want to change your password ?") == true)
+                return true;
+            else
+                return false;
+        }
+
+        function confirm_Add() {
+            if (confirm("Are you sure you want to Add this data ?") == true)
+                return true;
+            else
+                return false;
+        }
+
+        function confirm_Cancel() {
+            if (confirm("Do you want to Cancel this data ?") == true)
+                return true;
+            else
+                return false;
+        }
+
+        function numeric_only(e) {
+            var unicode = e.charCode ? e.charCode : e.keyCode;
+            if (unicode == 8 || unicode == 9 || (unicode >= 48 && unicode <= 57)) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        function IsValidEmail(email) {
+            var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+            return expr.test(email);
+        };
+        
+    </script>
+    
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />     
+    <link href="GridView.css" rel="stylesheet" type="text/css" />       
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+        
+    <meta name="Author" content="Zunayed Al Habib - zunayedqu10@gmail.com" />
+    
+</head>
+
+<script language="JavaScript" src="../js/datetimepicker.js" type="text/javascript"> </script>
+
+<body>
+    <form id="form1" runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/image/Rangs-Logo.png" 
+                        Height="19px" Width="134px" />
+                        &nbsp;
+                        DMS (Distribution management system)
+                </h1>
+            </div>
+
+            <div class="loginDisplay">
+                  
+                  Welcome <span class="bold">,  
+                  <asp:Label ID="lblUser" runat="server"></asp:Label></span>!<br />
+                  <asp:Label ID="lblCTP" runat="server"></asp:Label><br />                                                                             
+                  [ 
+                  <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" 
+                      LogoutText="Log Out" LogoutPageUrl="~/Account/LogOut.aspx" LoginText="Log Out"/> ]                   
+              
+            </div>
+
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
+                    EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" 
+                    BorderColor="Yellow">
+                    <Items>                            
+                      
+                        <asp:MenuItem NavigateUrl="~/Default_Mkt_Admin.aspx" Text="Home" Value="Home">
+                        </asp:MenuItem>
+                      
+                        <asp:MenuItem Text="Report">
+                            <asp:MenuItem Text="Receive Report" Value="rptReceive" 
+                                NavigateUrl="~/FormsReport_Admin/frmReceiveReport_admin.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Sales Report" Value="rptSales" 
+                                NavigateUrl="~/FormsReport_Admin/frmSalesReport_admin.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Transfer Report" Value="rptTransfer" 
+                                NavigateUrl="~/FormsReport_Admin/frmTransferReport_admin.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Customer Withdrawn Report" Value="rptWithdrawn" 
+                                NavigateUrl="~/FormsReport_Admin/frmTransferReport_admin.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Stock Report" Value="rptStock" 
+                                NavigateUrl="~/FormsReport_Admin/frmStockReport_admin.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+
+                        <asp:MenuItem Text="Setting" Value="Setting">
+                            <asp:MenuItem NavigateUrl="~/FormsReport_Admin/Product_Info.aspx" 
+                                Text="Product Information" Value="ProdInfo"></asp:MenuItem>
+                            <asp:MenuItem Text="Change User Password" Value="ChangeUserPassword"
+                                NavigateUrl="~/FormsReport_Admin/ChangePassword.aspx">
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+
+                        <asp:MenuItem Text="View" Value="View">
+                            <asp:MenuItem Text="Product Information" Value="ProductInfo" 
+                                NavigateUrl="~/FormsReport_Admin/View_ProductInfo_Admin.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="CTP/Dealer Information" Value="CTPInfo" 
+                                NavigateUrl="~/FormsReport_Admin/Ctp_Info.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Campaign Information" Value="CampaignInfo"
+                                NavigateUrl="~/FormsReport_Admin/Campaign_Info.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Office Circular" Value="OfficeCircular" 
+                                NavigateUrl="~/FormsReport_Admin/File_List_Admin.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+
+    <div class="footer">
+      
+        <span style="color: rgb(255, 255, 255); font-family: 'helvetica neue', Helvetica, Arial, Verdana, sans-serif; font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 19px; orphans: auto; text-align: Right; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(10, 19, 34); display: inline !important; float: none;">
+        Copyright © Rangs Electronics Ltd. All rights reserved.</span>
+       
+        <br />
+        <span style="color: rgb(102, 102, 102); font-family: 'helvetica neue', Helvetica, Arial, Verdana, sans-serif; font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 19px; orphans: auto; text-align: Right; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none;">
+        Software Developed by, Md. Zunayed Al Habib, Assistant Manager (Software Development).</span>
+    </div>
+
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿
+.paging
+        {
+        }
+         
+        .paging a
+        {
+            background-color: #00C157;
+            padding: 5px 7px;
+            text-decoration: none;
+            border: 1px solid #00C157;
+        }
+         
+        .paging a:hover
+        {
+            background-color: #E1FFEF;
+            color: #00C157;
+            border: 1px solid #00C157;
+        }
+         
+        .paging span
+        {
+            background-color: #E1FFEF;
+            padding: 5px 7px;
+            color: #00C157;
+            border: 1px solid #00C157;
+        }
+         
+        tr.paging
+        {
+            background: none !important;
+        }
+         
+        tr.paging tr
+        {
+            background: none !important;
+        }
+        tr.paging td
+        {
+            border: none;
+        }

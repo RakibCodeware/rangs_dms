@@ -1,0 +1,49 @@
+.carousel,
+.item,
+.active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.carousel-caption{ position:absolute;   }
+.carousel-caption h2{
+     color:#fff; text-align:center;
+     font-size:46px; 
+     line-height: 1.5;
+     font-family: Bangla, Arial;;
+}
+
+ 
+
+ @media screen and (max-width: 640px) {
+	 
+	 .carousel-caption h2{
+	 color:#fff; text-align:center;
+         font-size:36px;
+         font-family: Bangla, Arial;;  
+}
+ }
+ 
+ 
+ @media screen and (max-width: 320px) {
+	 
+	 .carousel-caption h2{
+	 color:#fff; text-align:center;
+         font-size:26px;  
+         font-family: Bangla, Arial;;
+}
+ }
