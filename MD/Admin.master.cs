@@ -28,6 +28,16 @@ public partial class Admin : System.Web.UI.MasterPage
 
         if (!IsPostBack)
         {
+
+            if (DateTime.Now > StaticInfo.FrezeeDmsEntryTime)
+            {
+                string[] path = HttpContext.Current.Request.Url.AbsolutePath.Split('/');
+                string page = path[path.Length - 1].ToString();
+                string[] pages = { "discount_code.aspx"};
+                if (pages.Contains(page))
+                    Response.Redirect("~/MD/Default_Administrator.aspx");
+            }
+
             this.lblUserName.Text = Session["UserName"].ToString();
             //this.lblCTP.Text = Session["eName"].ToString();
 

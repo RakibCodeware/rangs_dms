@@ -36,11 +36,16 @@ public partial class Admin : System.Web.UI.MasterPage
 
         if (!IsPostBack)
         {
-            string[] path = HttpContext.Current.Request.Url.AbsolutePath.Split('/');
-            string page = path[path.Length - 1].ToString();
-            string[] pages = { "Sales_New.aspx", "Deposite_Entry.aspx", "petty_cash_Entry.aspx", "Installation_request.aspx", "Requirement.aspx", "customer.aspx" };
-            if (pages.Contains(page))
-                Response.Redirect("~/CTP/Default_Administrator.aspx");
+
+            if (DateTime.Now > StaticInfo.FrezeeDmsEntryTime) 
+            {
+                string[] path = HttpContext.Current.Request.Url.AbsolutePath.Split('/');
+                string page = path[path.Length - 1].ToString();
+                string[] pages = { "Sales_New.aspx", "Deposite_Entry.aspx", "petty_cash_Entry.aspx", "Installation_request.aspx", "Requirement.aspx", "customer.aspx" };
+                if (pages.Contains(page))
+                    Response.Redirect("~/CTP/Default_Administrator.aspx");
+            }
+            
 
             this.lblUserName.Text = Session["UserName"].ToString();
             //this.lblCTP.Text = Session["eName"].ToString();
